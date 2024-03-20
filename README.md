@@ -73,7 +73,6 @@ You will need to put your config.json file in the root of the npmhome directory.
 
 ## Known issues
 
-- Dark mode toggle does not work ([issue](https://github.com/billettg/npmhome/issues/1))
 - No support for ARM Docker image yet ([issue](https://github.com/billettg/npmhome/issues/2))
 
 ## Disclaimer
