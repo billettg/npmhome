@@ -27,6 +27,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    row-gap: 5px;
     margin: 10px;
     padding: 10px;
     border: 1px solid var(--border-color);
@@ -103,4 +104,26 @@ i {
 .link-seperator {
     color: var(--border-color);
     margin: 10px;    
+}
+@media only screen and (max-device-width: 480px) {
+    #header {
+        padding: 5px;
+        font-size: small;
+        justify-content: center;
+    }
+    #footer {
+        font-size: small;
+        padding: 5px;
+    }
+    #main {
+        font-size: small;
+        padding: 5px;
+    }
+    .host-container {
+        margin: 5px;
+    }
+    .host-container:hover {
+        border: 1px solid var(--border-color);
+        cursor: inherit;
+    }
 }

@@ -1,20 +1,24 @@
-import config from './config.json' assert { type: 'json'};
-
-const serverHost = config.server.host;
-const serverPort = config.server.port;
-const identity = config.server.email;
-const secret = config.server.password;
-var showForwarding = config.appearance.showforwarding;
-var showDisabled = config.appearance.showdisabled;
+var config, serverHost, serverPort, identity, secret, showForwarding, showDisabled, data;
 const toggleOnIcon = `<i class="fa-solid fa-toggle-on fa-2xl"></i>`;
 const toggleOffIcon = `<i class="fa-solid fa-toggle-off fa-2xl"></i>`;
-var data;
 
-if (!config.appearance.showheader) document.getElementById("header").style.display = 'none';
-if (!config.appearance.showfooter) document.getElementById("footer").style.display = 'none';
+window.onload = async function () {
+    const response = await fetch("./config.json");
+    config = await response.json();
+    serverHost = config.server.host;
+    serverPort = config.server.port;
+    identity = config.server.email;
+    secret = config.server.password;
+    showForwarding = config.appearance.showforwarding;
+    showDisabled = config.appearance.showdisabled;
+    if (!config.appearance.showheader) document.getElementById("header").style.display = 'none';
+    if (!config.appearance.showfooter) document.getElementById("footer").style.display = 'none';
+    getProxyHosts();
+}
 
 async function getToken() {
     try {
+        document.getElementById("serverInfo").innerHTML = `Attempting to connect to ${serverHost}:${serverPort}`;
         const response = await fetch(`http://${serverHost}:${serverPort}/api/tokens`, {
             method: 'POST',
             headers: {
@@ -44,7 +48,6 @@ async function getProxyHosts() {
         });
         if (response.ok) {
             data = await response.json();
-            console.log(data);
             render();
         } else {
             console.log('Error fetching proxy hosts:', response.status);
@@ -96,5 +99,3 @@ document.getElementById("showDisabledContainer").addEventListener('click', funct
     }
     render();
 });
-
-getProxyHosts();
