@@ -12,6 +12,7 @@ Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hos
 - Automatically populated dashboard
 - No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
 - Clean and simple interface
+- Dark and light theme
 
 ## Instructions
 
