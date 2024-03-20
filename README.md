@@ -113,6 +113,8 @@ Check your compose/run/desktop configuration, ensure that you have specified a p
 
 Note that if you run the container via Docker desktop, it will assign a random host port (0) if you do not specify one.
 
+If you are running http-server, make sure you access npmhome via the port shown (should be 8080), or use -p <yourport> to run on a specified port. It does not need to run on port 1234, this is just for Docker and the internal http-server to connect to the host port.
+
 - npmhome cannot connect to NPM
 
 Check config.json is correctly formatted and loaded. Make sure your machine running npmhome can see the IP and port of NPM's web interface which should be listening on port 81. Check that communication is not blocked by any firewalls. Try opening the home page of NPM and adding /api/tokens, does it show a JSON response? If not it is likely that your client machine cannot see the NPM host machine.
