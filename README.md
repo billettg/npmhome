@@ -64,8 +64,8 @@ npx http-server -p <your port>
 
 ## Known issues
 
-- Dark mode toggle does not work 
-- No support for ARM Docker image yet
+- Dark mode toggle does not work ([issue](https://github.com/billettg/npmhome/issues/2))
+- No support for ARM Docker image yet ([issue](https://github.com/billettg/npmhome/issues/1))
 - Mobile rendering may be broken but I am working on adding mobile support soon ([issue](https://github.com/billettg/npmhome/issues/6))
 
 ## Disclaimer
