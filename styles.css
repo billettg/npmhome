@@ -1,10 +1,30 @@
 :root {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    --border-color: rgb(75,75,75);
-    --highlight-color: purple;
     user-select: none;
-    color-scheme: light dark;
 }
+
+[data-theme="dark"] {
+    --bg-color: rgb(10,10,10);
+    --host-bg-color: rgb(20,20,20);
+    --border-color: rgb(75,75,75);
+    --highlight-color: rgb(236, 9, 206);
+    --host-color: white;
+    --host-hover-color: white;
+    --icon-color: rgb(100,100,100);
+    --icon-hover-color: rgb(150,150,150);
+}
+
+[data-theme="light"] {
+    --bg-color: rgb(245,245,245);
+    --host-bg-color: rgb(235,235,235);
+    --border-color: rgb(150,150,150);
+    --highlight-color: rgb(236, 9, 206);
+    --host-color: black;
+    --host-hover-color: black;
+    --icon-color: rgb(155,155,155);
+    --icon-hover-color: rgb(205,205,205);
+}
+
 .gradient-text {
     background-color: #f3ec78;
     background-image: linear-gradient(-45deg, rgb(160, 34, 160), rgb(179, 41, 41), rgb(184, 184, 35));
@@ -19,7 +39,10 @@ h1 {
     margin: 0;
 }
 body {
-    background-color: rgb(10,10,10);
+    background-color: var(--bg-color);
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .disabled {
     pointer-events: none;
@@ -35,18 +58,18 @@ body {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    background-color: rgb(20,20,20);
+    background-color: var(--host-bg-color);
 }
 .host-container:hover {
-    border: 1px solid white;
+    border: 1px solid var(--host-hover-color);
     cursor: pointer;
 }
 .hostname {
-    color: white;
+    color: var(--host-color);
     margin-left: 5px;
 }
 .domain {
-    color: var(--highlight-color); 
+    color: var(--highlight-color)
 }
 .label {
     padding-right: 10px;
@@ -67,7 +90,10 @@ a {
     padding: 10px;
 }
 i {
-    color: white;
+    color: var(--icon-color);
+}
+i:hover {
+    color: var(--icon-hover-color);
 }
 .controlContainer {
     padding: 5px;
@@ -79,11 +105,30 @@ i {
     min-width: 22px;
     height: auto;
 }
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.space {
+    justify-content: space-between;
+    width: 100%;
+}
+.right {
+    justify-content: right;
+    width: 100%;
+}
+#themeContainer {
+    position: absolute;
+    left: 0;
+}
 #header {
     color: var(--border-color);
-    padding: 5px;
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     border-bottom: 1px solid var(--border-color);
@@ -94,6 +139,8 @@ i {
     flex-wrap: wrap;
     margin-right: auto;
     font-style: italic;
+    margin: 0;
+    padding: 0;
 }
 #footer {
     color: var(--border-color);
@@ -103,6 +150,7 @@ i {
     align-items: center;
     justify-content: center;
     border-top: 1px solid var(--border-color);
+    position: relative;
 }
 #serverHost {
     color: var(--highlight-color);
@@ -131,5 +179,8 @@ i {
     .host-container:hover {
         border: 1px solid var(--border-color);
         cursor: inherit;
+    }
+    h1 {
+        padding: 5px;
     }
 }

@@ -1,6 +1,7 @@
 var config, serverHost, serverPort, identity, secret, showForwarding, showDisabled, data;
 const toggleOnIcon = `<i class="fa-solid fa-toggle-on fa-2xl"></i>`;
 const toggleOffIcon = `<i class="fa-solid fa-toggle-off fa-2xl"></i>`;
+document.documentElement.setAttribute('data-theme', 'dark');
 
 window.onload = async function () {
     const response = await fetch("./config.json");
@@ -98,4 +99,21 @@ document.getElementById("showDisabledContainer").addEventListener('click', funct
         showDisabled = true
     }
     render();
+});
+
+document.getElementById("controlThemeContainer").addEventListener('click', function(e) {
+    var invert;
+    var theme;
+    if (document.documentElement.getAttribute('data-theme') == 'dark') {
+        theme = 'light';
+        invert = 'invert()';
+    } else {
+        theme = 'dark';
+        invert = 'none';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+    var invertElements = document.getElementsByClassName("invert");
+    for (let i=0 ; i < invertElements.length; i++) {
+        invertElements[i].style.filter = invert;
+    }
 });

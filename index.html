@@ -8,31 +8,36 @@
     <title>npmhome</title>
   </head>
   <body>
-    <div id="header">
-      <div class="controlContainer" id="title">
-        <h1 class="gradient-text">npmhome</h1>
+    <div id="header" class="column">
+      <div class="row space">
+        <div class="controlContainer" id="title">
+          <h1 class="gradient-text">npmhome</h1>
+        </div>
+      <div class="controlContainer">
+        <span class="label">Server:</span>
+        <div id="serverInfo">Not connected</div>
+      </div>
+    </div>
+  <div class="row right">
+    <div class="controlContainer">
+      <span class="label">Show:</span>
+      <span class="label">Forwarding</span>
+      <div class="invert" id="showForwardingContainer"><i class="fa-solid fa-toggle-on fa-2xl"></i></div>
+    </div>
+    <div class="controlContainer">
+      <span class="label">Disabled</span>
+      <div class="invert" id="showDisabledContainer"><i class="fa-solid fa-toggle-on fa-2xl"></i></div>
+    </div>
   </div>
-  <div class="controlContainer">
-      <span class="label">Server:</span>
-      <div id="serverInfo">Not connected</div>
-    </div>
-    <div class="controlContainer">
-      <span class="label">Show forwarding</span>
-      <div id="showForwardingContainer"><i class="fa-solid fa-toggle-on fa-2xl"></i></div>
-    </div>
-    <div class="controlContainer">
-      <span class="label">Show disabled</span>
-      <div id="showDisabledContainer"><i class="fa-solid fa-toggle-on fa-2xl"></i></div>
-    </div>
-    <div class="controlContainer">
-      <div id="controlThemeContainer"><i class="fa-solid fa-moon fa-xl"></i></div>
-    </div>
   </div>
   <div id="main"></div>
   <div id="footer">
     <a href="https://github.com/billettg/npmhome" target="_blank">Github</a>
     <span class="link-seperator">|</span>
     <a href="https://nginxproxymanager.com/" target="_blank">Nginx Proxy Manager</a>
+    <div class="controlContainer" id="themeContainer">
+      <div class="invert" id="controlThemeContainer"><i class="fa-solid fa-sun fa-xl"></i></div>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
