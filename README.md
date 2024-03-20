@@ -41,7 +41,6 @@ Create a config.json file with the following content:
     }
 }
 ```
-NOTE: To see newer revisions please make sure you clear your browser cache, or do a cache refresh (CTRL + F5 on Windows, SHIFT + CMD + R on Mac).
 
 ## Docker run
 
@@ -118,6 +117,22 @@ If you are running http-server, make sure you access npmhome via the port shown 
 - npmhome cannot connect to NPM
 
 Check config.json is correctly formatted and loaded. Make sure your machine running npmhome can see the IP and port of NPM's web interface which should be listening on port 81. Check that communication is not blocked by any firewalls. Try opening the home page of NPM and adding /api/tokens, does it show a JSON response? If not it is likely that your client machine cannot see the NPM host machine.
+
+- I can't run the image on ARM architecture
+
+It's not supported yet, but feel free to clone the project and build it yourself using docker buildx, which I am planning to add soon.
+
+- I have a Docker or NPM issue
+
+Please consult the Docker or NPM documentation.
+
+- The dashboard never attempts to connect to NPM, it just says "not connected"
+
+Please check that Javascript is enabled in your browser as this is the underlying code that is used to connect to NPM.
+
+- I don't see new changes
+
+To see newer revisions please make sure you clear your browser cache, or do a cache refresh (CTRL + F5 on Windows, SHIFT + CMD + R on Mac).
 
 ## Donations
 
