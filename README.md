@@ -76,7 +76,7 @@ Reliability, performance and compatibility of this software is not guaranteed.
 
 ## Support
 
-Please log any issues [here](https://github.com/billettg/npmhome/issues).
+If you have any feedback, questions, or issues please log them [here](https://github.com/billettg/npmhome/issues).
 
 This project is currently under active development and I plan to implement features, and bug fix when I have time to do so.
 
