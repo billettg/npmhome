@@ -1,7 +1,6 @@
 var config, serverHost, serverPort, identity, secret, showForwarding, showDisabled, data;
 const toggleOnIcon = `<i class="fa-solid fa-toggle-on fa-2xl"></i>`;
 const toggleOffIcon = `<i class="fa-solid fa-toggle-off fa-2xl"></i>`;
-document.documentElement.setAttribute('data-theme', 'dark');
 
 window.onload = async function () {
     const response = await fetch("./config.json");
@@ -12,6 +11,7 @@ window.onload = async function () {
     secret = config.server.password;
     showForwarding = config.appearance.showforwarding;
     showDisabled = config.appearance.showdisabled;
+    document.documentElement.setAttribute('data-theme', config.appearance.darkmode ? 'dark' : 'light');
     if (!config.appearance.showheader) document.getElementById("header").style.display = 'none';
     if (!config.appearance.showfooter) document.getElementById("footer").style.display = 'none';
     getProxyHosts();
