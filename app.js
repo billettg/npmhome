@@ -106,10 +106,8 @@ document.getElementById("controlThemeContainer").addEventListener('click', funct
     var theme;
     if (document.documentElement.getAttribute('data-theme') == 'dark') {
         theme = 'light';
-        invert = 'invert()';
     } else {
         theme = 'dark';
-        invert = 'none';
     }
     document.documentElement.setAttribute('data-theme', theme);
     var invertElements = document.getElementsByClassName("invert");
