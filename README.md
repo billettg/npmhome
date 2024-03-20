@@ -53,7 +53,7 @@ If you're running the container through Docker desktop, make sure you go to opti
 
 ## Docker desktop
 
-As per the documentation, please pull the image billettg/npmhome and run it, then select optional settings > ports, and specify your host port (the one that you will connect on). If you don't do this Docker will assign a random port. It is important to note that if you run the container as is you will not be able to connect to it on port 1234!
+Pull the image and run it, navigate to optional settings and set the port mapping and volume mappings as per the Docker run command above. If you don't do this npmhome will not work and you won't be able to connect to it or see your NPM proxy hosts.
 
 Once you have done this point your browser to http://localhost:port or http://IP:port to access the web interface.
 
@@ -104,6 +104,18 @@ If you have any feedback, questions, or issues please log them [here](https://gi
 This project is currently under active development and I plan to implement features, and bug fix when I have time to do so.
 
 I cannot guarantee any support responses or timescales for bug fixes or feature implementations.
+
+## FAQ
+
+- npmhome is not listening on port 1234
+
+Check your compose/run/desktop configuration, ensure that you have specified a port mapping of 1234:1234, or <yourhostport>:1234. You must map to 1234 to ensure that it connects to the internal http-server running on port 1234 (right hand side of the port mapping).
+
+Note that if you run the container via Docker desktop, it will assign a random host port (0) if you do not specify one.
+
+- npmhome cannot connect to NPM
+
+Check config.json is correctly formatted and loaded. Make sure your machine running npmhome can see the IP and port of NPM's web interface which should be listening on port 81. Check that communication is not blocked by any firewalls. Try opening the home page of NPM and adding /api/tokens, does it show a JSON response? If not it is likely that your client machine cannot see the NPM host machine.
 
 ## Donations
 
