@@ -1,10 +1,14 @@
-![image](https://github.com/billettg/npmhome/assets/3407237/b260331a-7023-4003-8ca8-b3d4f841c979)
-
 # <p align=center>npmhome</p>
 
 ## Info
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
+
+## Screenshots
+
+![image](https://github.com/billettg/npmhome/assets/3407237/0d330661-c59d-4729-86ae-08d339f0886c)
+![image](https://github.com/billettg/npmhome/assets/3407237/05165f4b-bc49-4fd8-9536-870dada8f302)
+![image](https://github.com/billettg/npmhome/assets/3407237/90a01cf6-b4f0-4933-ab14-756cc6f2f7bd)
 
 ## Features
 
