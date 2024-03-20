@@ -6,6 +6,13 @@
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
 
+## Features
+
+- NEW - Mobile support
+- Automatically populated dashboard
+- No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
+- Clean and simple interface
+
 ## Instructions
 
 Create a config.json file with the following content:
@@ -61,6 +68,8 @@ git clone https://github.com/billettg/npmhome.git
 cd npmhome
 npx http-server -p <your port>
 ```
+
+You will need to put your config.json file in the root of the npmhome directory.
 
 ## Known issues
 
