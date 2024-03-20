@@ -1,10 +1,9 @@
-* {
+:root {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 0;
-    margin: 0;
     --border-color: rgb(75,75,75);
     --highlight-color: purple;
     user-select: none;
+    color-scheme: light dark;
 }
 .gradient-text {
     background-color: #f3ec78;
@@ -14,6 +13,10 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+}
+h1 {
+    padding: 0;
+    margin: 0;
 }
 body {
     background-color: rgb(10,10,10);
@@ -72,7 +75,9 @@ i {
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
     min-width: 22px;
+    height: auto;
 }
 #header {
     color: var(--border-color);
@@ -82,6 +87,7 @@ i {
     align-items: center;
     justify-content: flex-end;
     border-bottom: 1px solid var(--border-color);
+    height: auto;
 }
 #title {
     display: flex;
