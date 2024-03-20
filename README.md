@@ -1,6 +1,6 @@
 # <p align=center>npmhome</p>
 
-## Info
+## About
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
 
