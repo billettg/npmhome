@@ -35,6 +35,7 @@ Create a config.json file with the following content:
     }
 }
 ```
+NOTE: To see newer revisions please make sure you clear your browser cache, or do a cache refresh (CTRL + F5 on Windows, SHIFT + CMD + R on Mac).
 
 ## Docker run
 
