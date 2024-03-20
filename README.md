@@ -49,6 +49,14 @@ Run Docker command to create the container:
 
 ```docker run -d --name npmhome -v /path/to/your/config.json:/app/config.json -p 1234:1234 billettg/npmhome```
 
+If you're running the container through Docker desktop, make sure you go to optional settings > ports, and set the host port to your desired port (doesn't have to be 1234).
+
+## Docker desktop
+
+As per the documentation, please pull the image billettg/npmhome and run it, then select optional settings > ports, and specify your host port (the one that you will connect on). If you don't do this Docker will assign a random port. It is important to note that if you run the container as is you will not be able to connect to it on port 1234!
+
+Once you have done this point your browser to http://localhost:port or http://IP:port to access the web interface.
+
 ## Docker compose
 
 Add this to your docker-compose.yml:
