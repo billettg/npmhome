@@ -69,6 +69,8 @@ cd npmhome
 npx http-server -p <your port>
 ```
 
+You will need to put your config.json file in the root of the npmhome directory.
+
 ## Known issues
 
 - Dark mode toggle does not work ([issue](https://github.com/billettg/npmhome/issues/1))
