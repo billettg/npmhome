@@ -6,6 +6,13 @@
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
 
+## Features
+
+- NEW - Mobile support
+- Automatically populated dashboard
+- No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
+- Clean and simple interface
+
 ## Instructions
 
 Create a config.json file with the following content:
