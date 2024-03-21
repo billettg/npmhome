@@ -6,23 +6,21 @@
 [data-theme="dark"] {
     --bg-color: rgb(10,10,10);
     --host-bg-color: rgb(20,20,20);
-    --border-color: rgb(75,75,75);
+    --text-color: rgb(75,75,75);
     --highlight-color: rgb(192, 57, 174);
     --host-color: white;
     --host-hover-color: white;
-    --icon-color: rgb(100,100,100);
     --icon-hover-color: rgb(200,200,200);
 }
 
 [data-theme="light"] {
     --bg-color: rgb(245,245,245);
     --host-bg-color: rgb(235,235,235);
-    --border-color: rgb(150,150,150);
+    --text-color: rgb(130,130,130);
     --highlight-color: rgb(236, 9, 206);
     --host-color: black;
     --host-hover-color: black;
-    --icon-color: rgb(200,200,200);
-    --icon-hover-color: rgb(100,100,100);
+    --icon-hover-color: rgb(75,75,75);
 }
 
 .gradient-text {
@@ -56,7 +54,7 @@ body {
     row-gap: 5px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--text-color);
     border-radius: 10px;
     background-color: var(--host-bg-color);
 }
@@ -75,7 +73,7 @@ body {
     padding-right: 10px;
 }
 .forwardingInfo {
-    color: var(--border-color); 
+    color: var(--text-color); 
     margin-left: 5px;
 }
 a {
@@ -90,7 +88,7 @@ a {
     padding: 10px;
 }
 i {
-    color: var(--icon-color);
+    color: var(--text-color);
 }
 i:hover {
     color: var(--icon-hover-color);
@@ -126,12 +124,12 @@ i:hover {
     left: 0;
 }
 #header {
-    color: var(--border-color);
+    color: var(--text-color);
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--text-color);
     height: auto;
 }
 #title {
@@ -143,20 +141,20 @@ i:hover {
     padding: 0;
 }
 #footer {
-    color: var(--border-color);
+    color: var(--text-color);
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--text-color);
     position: relative;
 }
 #serverHost {
     color: var(--highlight-color);
 }
 .link-seperator {
-    color: var(--border-color);
+    color: var(--text-color);
     margin: 10px;    
 }
 @media only screen and (max-device-width: 480px) {
@@ -177,7 +175,7 @@ i:hover {
         margin: 5px;
     }
     .host-container:hover {
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--text-color);
         cursor: inherit;
     }
     h1 {
