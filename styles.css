@@ -6,7 +6,7 @@
 [data-theme="dark"] {
     --bg-color: rgb(10,10,10);
     --host-bg-color: rgb(20,20,20);
-    --text-color: rgb(75,75,75);
+    --text-color: rgb(50,50,50);
     --highlight-color: rgb(192, 57, 174);
     --host-color: white;
     --host-hover-color: white;
@@ -41,6 +41,10 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+.icon {
+    color: var(--text-color);
+    height: 16px;
 }
 .disabled {
     pointer-events: none;
@@ -90,9 +94,11 @@ a {
 i {
     color: var(--text-color);
 }
-i:hover {
-    color: var(--icon-hover-color);
-}
+@media (hover: hover) {
+    i:hover {
+        color: var(--icon-hover-color);
+    }
+  }
 .controlContainer {
     padding: 5px;
     margin: 5px;
@@ -118,10 +124,6 @@ i:hover {
 .right {
     justify-content: right;
     width: 100%;
-}
-#themeContainer {
-    position: absolute;
-    left: 0;
 }
 #header {
     color: var(--text-color);
@@ -149,9 +151,6 @@ i:hover {
     justify-content: center;
     border-top: 1px solid var(--text-color);
     position: relative;
-}
-#serverHost {
-    color: var(--highlight-color);
 }
 .link-seperator {
     color: var(--text-color);

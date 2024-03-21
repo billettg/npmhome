@@ -1,6 +1,8 @@
 var config, serverHost, serverPort, identity, secret, showForwarding, showDisabled, data;
-const toggleOnIcon = `<i class="fa-solid fa-toggle-on fa-2xl"></i>`;
-const toggleOffIcon = `<i class="fa-solid fa-toggle-off fa-2xl"></i>`;
+const toggleDisabledIconOn = `<i class="fa-solid fa-ban fa-xl"></i>`;
+const toggleDisabledIconOff = `<i class="fa-regular fa-circle fa-xl"></i>`;
+const toggleForwardingIconOn = '<i class="fa-solid fa-eye fa-xl"></i>';
+const toggleForwardingIconOff = '<i class="fa-solid fa-eye-slash fa-xl"></i>';
 
 window.onload = async function () {
     const response = await fetch("./config.json");
@@ -19,7 +21,7 @@ window.onload = async function () {
 
 async function getToken() {
     try {
-        document.getElementById("serverInfo").innerHTML = `Attempting to connect to ${serverHost}:${serverPort}`;
+        document.getElementById("serverInfo").innerHTML = `<i id="connectionIcon" class="fa-solid fa-hourglass-start fa-xl"></i>`;
         const response = await fetch(`http://${serverHost}:${serverPort}/api/tokens`, {
             method: 'POST',
             headers: {
@@ -30,11 +32,14 @@ async function getToken() {
                 secret: secret
             })
         });
+        document.getElementById("serverInfo").innerHTML = `<i id="connectionIcon" class="fa-solid fa-plug fa-xl connectionIcon"></i>`;
+        //document.getElementById("connectionIcon").style.color = "green";
         const data = await response.json();
         return data.token;
     } catch (error) {
+        document.getElementById("serverInfo").innerHTML = `<i id="connectionIcon" class="fa-solid fa-plug-circle-xmark fa-xl"></i>`;
+        document.getElementById("connectionIcon").style.color = "rgb(153, 39, 39)";
         console.error(error);
-        document.getElementById("serverInfo").innerHTML = `Unable to connect to server - check config.json and test communication to ${serverHost}:${serverPort}`;
         throw error;
     }
 }
@@ -58,29 +63,28 @@ async function getProxyHosts() {
     }
 }
 
-function render() {
+async function render() {
     document.getElementById("main").innerHTML = "";
     data.forEach(host => {
         if (host.enabled == 1 || (host.enabled == 0 && showDisabled)) {
-        var fqdn = host.domain_names;
-        var forwardHostPort = host.forward_host + ":" + host.forward_port;
-        var hostname = fqdn.toString().split('.')[0];
-        var domain = fqdn.toString().split(hostname)[1];
-        var forwardScheme = host.forward_scheme;
-        const div = document.createElement("div");
-        div.innerHTML += `<span class="hostname"> ${hostname}</span><span class="domain">${domain}</span>`
-        if (showForwarding) div.innerHTML += `<span class="forwardingInfo"> >> ${forwardScheme}://${forwardHostPort}</span></a>`;
-        div.className = "host-container";
-        if (host.enabled == 0 && showDisabled) div.classList.add("disabled");
-        document.getElementById("main").appendChild(div);
-        div.addEventListener('click', function(e) {
-            window.open(`${forwardScheme}://${fqdn}`);
-        })
-    }
+            var fqdn = host.domain_names[0];
+            var forwardHostPort = host.forward_host + ":" + host.forward_port;
+            var hostname = fqdn.toString().split('.')[0];
+            var domain = fqdn.toString().split(hostname)[1];
+            var forwardScheme = host.forward_scheme;
+            const div = document.createElement("div");
+            div.innerHTML += `<span class="hostname"> ${hostname}</span><span class="domain">${domain}</span>`
+            if (showForwarding) div.innerHTML += `<span class="forwardingInfo"> >> ${forwardScheme}://${forwardHostPort}</span></a>`;
+            div.className = "host-container";
+            if (host.enabled == 0 && showDisabled) div.classList.add("disabled");
+            document.getElementById("main").appendChild(div);
+            div.addEventListener('click', function(e) {
+                window.open(`${forwardScheme}://${fqdn}`);
+            })
+        }
     });
-    document.getElementById("showForwardingContainer").innerHTML = showForwarding ? toggleOnIcon : toggleOffIcon;
-    document.getElementById("showDisabledContainer").innerHTML = showDisabled ? toggleOnIcon : toggleOffIcon;
-    document.getElementById("serverInfo").innerHTML = `<span id="serverHost">${serverHost}</span>`;
+    document.getElementById("showForwardingContainer").innerHTML = showForwarding ? toggleForwardingIconOn : toggleForwardingIconOff;
+    document.getElementById("showDisabledContainer").innerHTML = showDisabled ? toggleDisabledIconOn : toggleDisabledIconOff;
 }
 
 document.getElementById("showForwardingContainer").addEventListener('click', function(e) {
