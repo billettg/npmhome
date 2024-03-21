@@ -102,7 +102,6 @@ document.getElementById("showDisabledContainer").addEventListener('click', funct
 });
 
 document.getElementById("controlThemeContainer").addEventListener('click', function(e) {
-    var invert;
     var theme;
     if (document.documentElement.getAttribute('data-theme') == 'dark') {
         theme = 'light';
@@ -110,8 +109,4 @@ document.getElementById("controlThemeContainer").addEventListener('click', funct
         theme = 'dark';
     }
     document.documentElement.setAttribute('data-theme', theme);
-    var invertElements = document.getElementsByClassName("invert");
-    for (let i=0 ; i < invertElements.length; i++) {
-        invertElements[i].style.filter = invert;
-    }
 });

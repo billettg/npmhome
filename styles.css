@@ -11,7 +11,7 @@
     --host-color: white;
     --host-hover-color: white;
     --icon-color: rgb(100,100,100);
-    --icon-hover-color: rgb(150,150,150);
+    --icon-hover-color: rgb(200,200,200);
 }
 
 [data-theme="light"] {
@@ -21,8 +21,8 @@
     --highlight-color: rgb(236, 9, 206);
     --host-color: black;
     --host-hover-color: black;
-    --icon-color: rgb(155,155,155);
-    --icon-hover-color: rgb(205,205,205);
+    --icon-color: rgb(200,200,200);
+    --icon-hover-color: rgb(100,100,100);
 }
 
 .gradient-text {
