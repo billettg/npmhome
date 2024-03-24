@@ -15,9 +15,10 @@ Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hos
 ## Features
 
 - NEW - Mobile support
+- NEW - Hotkey support
 - Automatically populated dashboard
 - No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
-- Clean and simple interface
+- Clean and simple interface which has now been streamlined
 - Dark and light theme
 
 ## Instructions
@@ -33,8 +34,6 @@ Create a config.json file with the following content:
         "password" : "password"
     },
     "appearance": {
-        "showforwarding": false,
-        "showdisabled": false,
         "showheader": true,
         "showfooter": true,
         "darkmode": true
