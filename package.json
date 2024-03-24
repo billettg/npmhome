@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cors-anywhere": "^0.4.4",
     "http-server": "^14.1.1",
     "npx": "^10.2.2"
   }
