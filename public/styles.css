@@ -70,6 +70,7 @@ body {
   border: 1px solid var(--text-color);
   border-radius: 10px;
   background-color: var(--host-bg-color);
+  height: 36px;
 }
 @media (hover: hover) {
   .host-box:hover {
