@@ -14,7 +14,7 @@ No configuration required other than entering your Nginx Proxy Manager location 
 
 - NEW - Mobile support
 - NEW - Hotkey support
-- NEW - Automatically fetched icons
+- NEW - Dynamic icon fetching
 - Automatically populated dashboard
 - No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
 - Clean and simple interface which has now been streamlined
@@ -84,7 +84,7 @@ node app.js
 
 You will need to put your config.json file in /public directory.
 
-## Icon fetching [NEW]
+## Dynamic icon fetching [NEW]
 
 Icons are now fetched in the following priority order:
 
@@ -93,6 +93,11 @@ Icons are now fetched in the following priority order:
 3. External CDN - https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/<hostname>.png (Courtesy of https://github.com/walkxcode/dashboard-icons)
 
 The search uses a builtin and transparent CORS proxy (cors-anywhere) to proxy requests to the relevant services and avoid CORS policy blocking (the only way I could easily and reliably implement this functionality).
+
+Important things to note:
+
+- Initial search may be slow as the app is indexing all known favicon links, which are then cached in local storage, so subsequent requests will be fast and pulled from the cache
+- To update icons clear your browser cache (hard refresh won't cut it) and refresh the page
 
 ## Known issues
 
