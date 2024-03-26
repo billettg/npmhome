@@ -141,7 +141,7 @@ It's not supported yet, but feel free to clone the project and build it yourself
 
 Please consult the Docker or NPM documentation.
 
-- The dashboard never attempts to connect to NPM, it just says "not connected"
+- The dashboard never attempts to connect to NPM and/or shows a red disconnected icon in the top right hand corner of the page
 
 Please check that Javascript is enabled in your browser as this is the underlying code that is used to connect to NPM.
 
