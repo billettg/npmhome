@@ -4,17 +4,19 @@
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
 
-No configuration required other than entering your Nginx Proxy Manager location and credentials.
+No configuration required other than entering your Nginx Proxy Manager location and credentials and host icons are automatically fetched from the host service, or external CDN (requires internet access).
 
 ## Screenshots
 
-![image](https://github.com/billettg/npmhome/assets/3407237/849bb14f-4111-4ef4-bda3-519340ef658b)
+![image](https://github.com/billettg/npmhome/assets/3407237/ad83719c-8bcf-4218-9326-2d50602ca6fc)
+
+![image](https://github.com/billettg/npmhome/assets/3407237/59c38ab6-b416-43ba-aacf-912fa0faafdd)
 
 ## Features
 
 - NEW - Mobile support
 - NEW - Hotkey support
-- NEW - Automatically fetched icons
+- NEW - Dynamic icon fetching
 - Automatically populated dashboard
 - No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
 - Clean and simple interface which has now been streamlined
@@ -82,7 +84,22 @@ cd npmhome
 node app.js
 ```
 
-You will need to put your config.json file in the root of the npmhome directory.
+You will need to put your config.json file in /public directory.
+
+## Dynamic icon fetching [NEW]
+
+Icons are now fetched in the following priority order:
+
+1. Favicon located at /favicon.ico
+2. Deep search of favicon links via the the hosts index page
+3. External CDN - https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/*hostname*.png (Courtesy of https://github.com/walkxcode/dashboard-icons)
+
+The search uses a builtin and transparent CORS proxy (cors-anywhere) to proxy requests to the relevant services and avoid CORS policy blocking (the only way I could easily and reliably implement this functionality).
+
+Important things to note:
+
+- Initial search may be slow as the app is indexing all known favicon links, which are then cached in local storage, so subsequent requests will be fast and pulled from the cache
+- To update icons clear your browser cache (hard refresh won't cut it) and refresh the page
 
 ## Known issues
 
@@ -124,7 +141,7 @@ It's not supported yet, but feel free to clone the project and build it yourself
 
 Please consult the Docker or NPM documentation.
 
-- The dashboard never attempts to connect to NPM, it just says "not connected"
+- The dashboard never attempts to connect to NPM and/or shows a red disconnected icon in the top right hand corner of the page
 
 Please check that Javascript is enabled in your browser as this is the underlying code that is used to connect to NPM.
 
