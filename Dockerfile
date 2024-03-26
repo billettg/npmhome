@@ -3,6 +3,5 @@
 FROM node:18-alpine
 WORKDIR /app
 COPY . .
-RUN npm install http-server
-CMD ["npx", "http-server", "-p 1234"]
+CMD ["node", "app.js"]
 EXPOSE 1234
