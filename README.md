@@ -84,6 +84,16 @@ node app.js
 
 You will need to put your config.json file in the root of the npmhome directory.
 
+## Icon fetching [NEW]
+
+Icons are now fetched in the following priority order:
+
+1. Favicon located at host/favicon.ico
+2. Deep search of favicon via host/*
+3. External CDN - https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/<hostname>.png (Courtesy of https://github.com/walkxcode/dashboard-icons)
+
+The search uses a builtin and transparent CORS proxy (cors-anywhere) to proxy requests to the relevant services and avoid CORS policy blocking (the only way I could easily and reliably implement this functionality).
+
 ## Known issues
 
 - No support for ARM Docker image yet ([issue](https://github.com/billettg/npmhome/issues/2))
