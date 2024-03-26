@@ -10,8 +10,7 @@ var config,
 const iconDark = `<img class="icon theme" src="icons/dark.png"></img>`;
 const iconLight = `<img class="icon theme" src="icons/light.png"></img>`;
 const iconLoading = `<img class="icon" src="icons/loading.png"></img>`;
-const iconConnectionError = `<i id="icon-connection-error" class="fa-solid fa-plug-circle-xmark fa-xl"></
-i>`; // online
+const iconConnectionError = `<img class="icon" src="icons/disconnected.png"></img>`;
 
 window.onload = async function () {
   const response = await fetch("./config.json");
@@ -89,7 +88,6 @@ async function getFavicon(url, hostname) {
   const urlProxy = corsProxy + url;
   console.log("Starting search of favicon for " + url);
   return new Promise(async (resolve, reject) => {
-    // Basic favicon search
     try {
       const response = await fetch(faviconUrl);
       if (response.ok) {
@@ -109,7 +107,6 @@ async function getFavicon(url, hostname) {
       console.log("Failed to fetch from " + faviconUrl);
     }
 
-    // Advanced favicon search
     try {
       console.log("Starting advanced search of favicon for " + url);
       const response = await fetch(urlProxy)
@@ -169,7 +166,6 @@ async function render() {
   var char = "a";
   for (let i = 0; i < data.length; i++) {
     const node = data[i];
-    console.log(node);
     if (node.enabled == 0) continue;
     const host = node.domain_names[0];
     const fHost = node.forward_host;
@@ -203,7 +199,7 @@ async function render() {
           };
         })
         .catch((e) => {
-          console.log("foo");
+          console.log(e);
         });
     }
     div.setAttribute("link", url);
