@@ -6,16 +6,13 @@ Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hos
 
 ## Screenshots
 
-![image](https://github.com/billettg/npmhome/assets/3407237/0d330661-c59d-4729-86ae-08d339f0886c)
-
-![image](https://github.com/billettg/npmhome/assets/3407237/05165f4b-bc49-4fd8-9536-870dada8f302)
-
-![image](https://github.com/billettg/npmhome/assets/3407237/90a01cf6-b4f0-4933-ab14-756cc6f2f7bd)
+![image](https://github.com/billettg/npmhome/assets/3407237/849bb14f-4111-4ef4-bda3-519340ef658b)
 
 ## Features
 
 - NEW - Mobile support
 - NEW - Hotkey support
+- NEW - Automatically fetched icons
 - Automatically populated dashboard
 - No authentication required other than initially setting up the config.json as this happens automatically using the API with bearer tokens
 - Clean and simple interface which has now been streamlined
@@ -75,12 +72,12 @@ Run the container with ```docker-compose up -d```
 
 ## Testing
 
-You can also git clone this project and start the http-server for testing:
+You can also git clone this project:
 
 ```
 git clone https://github.com/billettg/npmhome.git
 cd npmhome
-npx http-server -p <your port>
+node app.js
 ```
 
 You will need to put your config.json file in the root of the npmhome directory.
