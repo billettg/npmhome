@@ -4,6 +4,8 @@
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
 
+No configuration required other than entering your Nginx Proxy Manager location and credentials.
+
 ## Screenshots
 
 ![image](https://github.com/billettg/npmhome/assets/3407237/849bb14f-4111-4ef4-bda3-519340ef658b)
