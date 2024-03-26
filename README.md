@@ -4,7 +4,7 @@
 
 Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hosts!
 
-No configuration required other than entering your Nginx Proxy Manager location and credentials and host icons are automatically fetched from the service, or external CDN.
+No configuration required other than entering your Nginx Proxy Manager location and credentials and host icons are automatically fetched from the service, or external CDN (requires internet access).
 
 ## Screenshots
 
