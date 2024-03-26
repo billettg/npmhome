@@ -8,7 +8,7 @@ No configuration required other than entering your Nginx Proxy Manager location 
 
 ## Screenshots
 
-![image](https://github.com/billettg/npmhome/assets/3407237/89436804-a051-48a6-bc5b-28ec952feb77)
+![image](https://github.com/billettg/npmhome/assets/3407237/ad83719c-8bcf-4218-9326-2d50602ca6fc)
 
 ![image](https://github.com/billettg/npmhome/assets/3407237/59c38ab6-b416-43ba-aacf-912fa0faafdd)
 
