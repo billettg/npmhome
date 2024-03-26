@@ -82,7 +82,7 @@ cd npmhome
 node app.js
 ```
 
-You will need to put your config.json file in the root of the npmhome directory.
+You will need to put your config.json file in /public directory.
 
 ## Icon fetching [NEW]
 
