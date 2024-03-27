@@ -48,7 +48,7 @@ Create a config.json file with the following content:
 
 Run Docker command to create the container:
 
-```docker run -d --name npmhome -v /path/to/your/config.json:/app/config.json -p 1234:1234 billettg/npmhome```
+```docker run -d --name npmhome -v /path/to/your/config.json:/app/public/config.json -p 1234:1234 billettg/npmhome```
 
 If you're running the container through Docker desktop, make sure you go to optional settings > ports, and set the host port to your desired port (doesn't have to be 1234).
 
@@ -68,7 +68,7 @@ services:
         image: billettg/npmhome
         container_name: npmhome
         volumes:
-            - /path/to/your/config.json:/app/config.json
+            - /path/to/your/config.json:/app/public/config.json
         ports:
             - 1234:1234
         restart: unless-stopped
