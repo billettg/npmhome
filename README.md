@@ -6,6 +6,8 @@ Self-hosted and fully automated dashboard for your Nginx Proxy Manager proxy hos
 
 No configuration required other than entering your Nginx Proxy Manager location and credentials and host icons are automatically fetched from the host service, or external CDN (requires internet access).
 
+This app is designed for internal use only, please do not expose it to the internet without using proper authentication in front of it and preferably WAF such as Cloudflare.
+
 ## Screenshots
 
 ![image](https://github.com/billettg/npmhome/assets/3407237/ad83719c-8bcf-4218-9326-2d50602ca6fc)
